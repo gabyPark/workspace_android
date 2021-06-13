@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<p id="textDate"> </p>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">box office 자료 불러오기</button>
+</div>
+
+
+<script>
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      var result= "데이터를 가져오는 중...몇분이 지나도 나타나지 않으면 데이터 가져오기 실패";
+      if (this.readyState == 4 && this.status == 200) {
+        result = this.responseText;           
+      }
+
+      document.getElementById("demo").innerHTML = result; 
+  };
+  xhttp.open("GET", "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

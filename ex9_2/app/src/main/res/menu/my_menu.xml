@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="선그리기" android:id="@+id/line"/>
+    <item android:title="원그리기" android:id="@+id/circle"/>
+
+</menu>
